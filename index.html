@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 10 Memory Book</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="majestic-bg"></div>
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="logo">BOND<span>.</span></div>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html" class="active">Home</a>
+            <a href="friends.html">Friends</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="trip.html">Trip</a>
+            <a href="school.html">Memories</a>
+            <a href="girls.html" class="highlight-link">Girls</a>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+</header>
+
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>
+          Friends, Fun, and <br />
+          Forever Memories
+        </h1>
+
+        <p>
+          This website is a small gift for my Class 10 friends. A collection of
+          our memories, moments, and the people who made school life special.
+        </p>
+
+        <a href="gallery.html" class="hero-btn">Open Memory Book</a>
+      </div>
+
+      <div class="hero-image">
+        <div class="photo-frame">
+          <img
+            src="Trip/pic909.JPG"
+            alt="Class 10 Group Photo"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+        </footer>
+
+<script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", () => {
+        // These now match the CSS class "active"
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      // Close menu when a link is clicked
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          hamburger.classList.remove("active");
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".navbar") && navLinks.classList.contains("active")) {
+          navLinks.classList.remove("active");
+          hamburger.classList.remove("active");
+        }
+      });
+    </script>
+
+    <footer class="majestic-footer">
+      <div class="footer-content">
+        <div class="credit">
+          <p>This website is created by <span class="author-name">Ayush Khanal</span></p>
+          <p class="footer-note">
+            A digital time capsule for the memories we've shared. Copy the link and keep it safe 
+            to revisit these days in the years to come. No further updates will be made—this 
+            site stands as a forever tribute to our bond. <br>
+            <strong>Completed: 20 FEB 2026</strong>
+          </p>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.youtube.com/@nitroCode07" class="social-icon yt" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.facebook.com/ayush.khanal.7121" class="social-icon fb" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/ayyuush___07/" class="social-icon ig" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:ayushkhanal265@gmail.com" class="social-icon mail" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 BOND. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </body>
+</html>

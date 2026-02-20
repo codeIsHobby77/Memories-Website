@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="trip.css" />
+    <title>Trip | BOND</title>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">BOND</div>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="friends.html">Friends List</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="trip.html">Trip</a>
+        <a href="school.html">School Memories</a>
+      </nav>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+    <section class="trip-wrap">
+      <div class="trip-header">
+        <h1>Our Incredible Trip</h1>
+        <p>Adventures and memories from our unforgettable class trip.</p>
+      </div>
+
+      <div class="trip-container" id="tripContainer">
+        <div class="trip-card">
+          <img src="Trip/pic1.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic2.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic3.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic4.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic5.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic6.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic7.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic8.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic9.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic10.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic11.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic12.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic13.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic14.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic15.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+
+        <div class="trip-card">
+          <img src="Trip/pic16.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+        <div class="trip-card">
+          <img src="Trip/pic17.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+        <div class="trip-card">
+          <img src="Trip/pic18.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+        <div class="trip-card">
+          <img src="Trip/pic19.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+        <div class="trip-card">
+          <img src="Trip/pic20.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+        <div class="trip-card">
+          <img src="Trip/pic21.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+        <div class="trip-card">
+          <img src="Trip/pic22.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+        <div class="trip-card">
+          <img src="Trip/pic23.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+        <div class="trip-card">
+          <img src="Trip/pic24.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+        <div class="trip-card">
+          <img src="Trip/pic25.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+        <div class="trip-card">
+          <img src="Trip/pic26.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+        <div class="trip-card">
+          <img src="Trip/pic27.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+        <div class="trip-card">
+          <img src="Trip/pic28.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+        <div class="trip-card">
+          <img src="Trip/pic29.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+        <div class="trip-card">
+          <img src="Trip/pic30.jpg" alt="Trip Memory" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="load-more-container">
+        <button id="loadMoreBtn" class="load-more-btn">Load More</button>
+      </div>
+
+      <div class="trip-closing">
+        <h2>Unforgettable Adventures</h2>
+        <p>
+          The trip was one of the most memorable experiences of Class 10. From
+          exploring new places to laughing until our sides hurt, these moments
+          brought us closer together. Every photo here tells a story of
+          friendship, fun, and the bonds that will last a lifetime. This trip
+          wasn't just about the destination—it was about the people we traveled
+          with. Here's to the memories we created together! 🚌✨
+        </p>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Initialize trip gallery with load more functionality
+        const IMAGES_PER_PAGE = 4;
+        let currentIndex = IMAGES_PER_PAGE;
+        const tripContainer = document.getElementById("tripContainer");
+        const tripCards = tripContainer.querySelectorAll(".trip-card");
+        const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+        // Initialize by hiding cards beyond the first 4
+        tripCards.forEach((card, index) => {
+          if (index >= IMAGES_PER_PAGE) {
+            card.classList.add("hidden");
+          }
+        });
+
+        // Hide button if there are 4 or fewer images
+        if (tripCards.length <= IMAGES_PER_PAGE) {
+          loadMoreBtn.classList.add("hidden");
+        }
+
+        // Load more images
+        loadMoreBtn.addEventListener("click", () => {
+          let countShown = 0;
+          tripCards.forEach((card, index) => {
+            if (countShown < IMAGES_PER_PAGE && index >= currentIndex) {
+              card.classList.remove("hidden");
+              countShown++;
+            }
+          });
+
+          currentIndex += IMAGES_PER_PAGE;
+
+          // Hide button if all images are visible
+          if (currentIndex >= tripCards.length) {
+            loadMoreBtn.classList.add("hidden");
+          }
+        });
+
+        // Hamburger menu functionality
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+          hamburger.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+          link.addEventListener("click", () => {
+            // Only close menu if hamburger is visible (mobile)
+            if (window.getComputedStyle(hamburger).display !== "none") {
+              navLinks.classList.remove("active");
+              hamburger.classList.remove("active");
+            }
+          });
+        });
+
+        document.addEventListener("click", (e) => {
+          if (
+            !e.target.closest(".navbar") &&
+            navLinks.classList.contains("active")
+          ) {
+            navLinks.classList.remove("active");
+            hamburger.classList.remove("active");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

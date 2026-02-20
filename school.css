@@ -1,0 +1,248 @@
+/* --- SCHOOL MEMORIES: THE MASTERPIECE --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #020205; /* Even deeper black */
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* --- ANIMATED GRADIENT BACKGROUND --- */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 30%, #16213e 0%, #020205 100%);
+    z-index: -1;
+}
+
+/* --- MAJESTIC NAVBAR (The Island) --- */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1100px;
+    height: 65px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    z-index: 2000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #fff, #667eea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* --- HEADER SECTION --- */
+.school-wrap {
+    padding: 150px 20px 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.school-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.school-header h1 {
+    font-size: clamp(3rem, 10vw, 5rem);
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(to bottom, #ffffff 30%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+/* --- THE GLOWING GRID --- */
+.school-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.school-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 15px;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+    filter: saturate(0.8) brightness(0.9);
+}
+
+.card-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    padding: 0 10px 10px;
+}
+
+/* --- THE MAGIC HOVER EFFECT --- */
+.school-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(79, 172, 254, 0.5);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 
+                0 0 20px rgba(79, 172, 254, 0.2);
+}
+
+.school-card:hover img {
+    transform: scale(1.1);
+    filter: saturate(1.1) brightness(1.1);
+}
+
+.school-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(225deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.school-card:hover::after {
+    transform: translateX(100%);
+}
+
+/* --- LOAD MORE BUTTON --- */
+.load-more-btn {
+    display: block;
+    margin: 60px auto;
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 18px 50px;
+    border-radius: 100px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+}
+
+.load-more-btn:hover {
+    background: white;
+    color: black;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+/* --- CLOSING BOX --- */
+.school-closing {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    padding: 60px 40px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    margin-top: 100px;
+    backdrop-filter: blur(10px);
+}
+
+.school-closing h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+}
+
+@media (max-width: 800px) {
+    .hamburger { display: flex; }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #020205;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 1999;
+    }
+
+    .nav-links.active { right: 0; }
+
+    .school-container {
+        grid-template-columns: 1fr; /* Single column stack for clean mobile look */
+    }
+}
+
+.hidden { display: none; }

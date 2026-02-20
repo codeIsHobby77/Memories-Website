@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Majestic Gallery</title>
+    <link rel="stylesheet" href="girls.css">
+</head>
+<body>
+
+<nav class="nav-glass">
+    <div class="nav-content">
+        <a href="index.html" class="nav-logo">HOME</a>
+        <a href="girls.html" class="nav-link active">GIRLS</a>
+    </div>
+</nav>
+
+<header class="majestic-header">
+    <h1>The Collection</h1>
+    <div class="divider"></div>
+</header>
+
+<div class="gallery-wrapper" id="gallery">
+    </div>
+
+<div class="loader-section">
+    <button id="loadMoreBtn" class="glow-button">LOAD MORE</button>
+</div>
+
+<script>
+    const gallery = document.getElementById('gallery');
+    const btn = document.getElementById('loadMoreBtn');
+    let index = 1;
+    const step = 4; // Loads 4 images at a time
+    const total = 16;
+
+    const phrases = ["Ethereal Vision", "Golden Grace", "Midnight Muse", "Pure Elegance", "Velvet Glow", "Sun-kissed", "Royal Spirit", "Serene Beauty"];
+
+    function loadImages() {
+        for (let i = 0; i < step; i++) {
+            if (index > total) {
+                btn.style.display = 'none';
+                break;
+            }
+            
+            const card = document.createElement('div');
+            card.className = 'image-card';
+            
+            // Randomly pick a description
+            const desc = phrases[Math.floor(Math.random() * phrases.length)];
+
+            card.innerHTML = `
+                <div class="img-container">
+                    <img src="Girls/girl${index}.jpg" alt="Majestic Girl ${index}" loading="lazy">
+                    <div class="img-overlay">
+                        <span class="img-desc">${desc}</span>
+                    </div>
+                </div>
+            `;
+            gallery.appendChild(card);
+            index++;
+        }
+    }
+
+    // Initial load
+    loadImages();
+    btn.addEventListener('click', loadImages);
+</script>
+
+</body>
+</html>
